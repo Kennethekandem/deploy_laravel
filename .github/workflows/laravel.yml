@@ -37,7 +37,6 @@ jobs:
       - uses: actions/checkout@v2
     with:
       token: ${{ secrets.PUSH_TOKEN }}
-    uses: actions/setup-node@v1
     run: |
       git config --local user.email "kennyekandem@gmail.com"
       git config --local user.name "Kennethekandem"
