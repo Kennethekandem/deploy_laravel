@@ -30,3 +30,29 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+    with:
+      token: ${{ secrets.PUSH_TOKEN }}
+        - name: Set up Node
+    uses: actions/setup-node@v1
+    with:
+      node-version: '12.x'
+        - run: npm install
+        - run: npm run production
+        - name: Commit built assets
+    run: |
+      git config --local user.email "kennyekandem@gmail.com"
+      git config --local user.name "Kennethekandem"
+      git add -f public/
+      git commit -m "Build front-end assets"
+      git push -f origin master
+      - name: Deploy to Master
+    uses: appleboy/ssh-action@master
+    with:
+      username: root
+      host: 138.197.191.145
+      password: ${{ secrets.SSH_PASSWORD }}
