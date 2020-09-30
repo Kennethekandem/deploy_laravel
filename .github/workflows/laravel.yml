@@ -38,11 +38,6 @@ jobs:
     with:
       token: ${{ secrets.PUSH_TOKEN }}
     uses: actions/setup-node@v1
-    with:
-      node-version: '12.x'
-        - run: npm install
-        - run: npm run production
-        - name: Commit built assets
     run: |
       git config --local user.email "kennyekandem@gmail.com"
       git config --local user.name "Kennethekandem"
