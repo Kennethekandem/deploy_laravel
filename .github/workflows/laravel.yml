@@ -31,13 +31,15 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
 
-  build:
-    name: Deploy code to prod
+  deploy:
+    name: Deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: Deployment
+          uses: appleboy/ssh-action@master
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PASSWORD }}
+          HOST: ${{ secrets.SSH_HOST }}
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          USERNAME: ${{ secrets.SSH_USERNAME }}
         with:
           args: --script 'cd /var/www/html/' --script 'git checkout -f' --script 'git pull'
