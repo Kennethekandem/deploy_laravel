@@ -37,11 +37,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Deployment
-          uses: appleboy/ssh-action@master
-          env:
-            HOST: ${{ secrets.SSH_HOST }}
-            KEY: ${{ secrets.SSH_PASSWORD }}
-            USERNAME: ${{ secrets.SSH_USERNAME }}
-          with:
-            args: --script 'cd {/var/www/html/}' --script 'git checkout -f' --script 'git pull'
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PASSWORD }}
+        with:
+          args: --script 'cd {/var/www/html/}' --script 'git checkout -f' --script 'git pull'
