@@ -41,7 +41,7 @@ jobs:
       git config --local user.email "kennyekandem@gmail.com"
       git config --local user.name "Kennethekandem"
       git commit -m "Build front-end assets"
-      git push origin master
+      git pull origin master
     - name: Deploy to production
     uses: appleboy/ssh-action@master
     env:
