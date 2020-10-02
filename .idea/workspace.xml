@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.github/workflows/laravel.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+            <state relative-caret-position="637">
+              <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -255,12 +255,12 @@
       <workItem from="1601622960390" duration="471000" />
       <workItem from="1601623522377" duration="594000" />
       <workItem from="1601633652482" duration="116000" />
-      <workItem from="1601641795246" duration="3959000" />
+      <workItem from="1601641795246" duration="4255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10370000" />
+    <option name="totallyTimeSpent" value="10666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
@@ -319,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.github/workflows/laravel.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        <state relative-caret-position="637">
+          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
         </state>
       </provider>
     </entry>
