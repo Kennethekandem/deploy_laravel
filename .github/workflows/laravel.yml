@@ -37,12 +37,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-    run:
-      git config --local user.email "kennyekandem@gmail.com"
-      git config --local user.name "Kennethekandem"
-      git commit -m "Build front-end assets"
-      git pull origin master
-    - name: Deploy to production
-    uses: appleboy/ssh-action@master
-    env:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PASSWORD }}
+      - name: Deployment
+          uses: appleboy/ssh-action@master
+          env:
+            HOST: ${{ secrets.SSH_HOST }}
+            KEY: ${{ secrets.SSH_PASSWORD }}
+            USERNAME: ${{ secrets.SSH_USERNAME }}
+          with:
+            args: --script 'cd {/var/www/html/}' --script 'git checkout -f' --script 'git pull'
