@@ -40,4 +40,4 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PASSWORD }}
         with:
-          args: --script 'cd {/var/www/html/}' --script 'git checkout -f' --script 'git pull'
+          path: --script 'cd {/var/www/html/}' --script 'git checkout -f' --script 'git pull'
