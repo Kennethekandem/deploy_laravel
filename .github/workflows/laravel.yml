@@ -3,6 +3,7 @@ name: Laravel
 on:
   push:
     branches: [ master ]
+      - 'releases/*'
   pull_request:
     branches: [ master ]
 
@@ -31,13 +32,15 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
 
-  deploy:
+  build:
+    name: Deploy code to prod
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-    with:
-      token: ${{ secrets.PUSH_TOKEN }}
-    with:
-      username: root
-      host: 138.197.191.145
-      password: ${{ secrets.SSH_PASSWORD }}
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Deploy
+        uses: musps/action-deployer-php@master
+        with:
+          args: deploy prod
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PASSWORD }}
